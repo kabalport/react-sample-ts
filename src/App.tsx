@@ -1,14 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserLayout from "./components/UserLayout";
-import Home from "./pages/user/Home";
 import About from "./pages/user/About";
 
 import NotFound from "./pages/common/NotFound";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminManage from "./pages/admin/MemberManage/AdminManage";
-import AdminRegisterPage from "./pages/admin/MemberManage/AdminRegisterPage";
 import AdminDashboardPage from "./pages/admin/AdminDashboard/AdminDashboardPage";
-import BoardManage from "./pages/admin/BoardManage/BoardManage";
 
 
 
