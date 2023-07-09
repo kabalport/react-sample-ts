@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import UserLayout from "./components/UserLayout";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import UserLayout from "./layouts/UserLayout";
 import About from "./pages/user/About";
 
 import NotFound from "./pages/common/NotFound";
@@ -11,12 +11,13 @@ import AdminDashboardPage from "./pages/admin/AdminDashboard/AdminDashboardPage"
 
 import LoginPage from "./pages/user/LoginPage";
 import RegisterPage from "./pages/user/RegisterPage";
-
-
+import UiPage from "./pages/UiPage/UiPage";
+import {ToDoListContextProvider} from "./contexts/ToDoList";
 
 const App = () => {
   return (
-      <Router>
+      <ToDoListContextProvider>
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<UserLayout />}>
             <Route index element={<About />} />
@@ -25,11 +26,15 @@ const App = () => {
             <Route index element={<AdminDashboardPage />} />
             <Route path="/admin/member/manage" element={<AdminManage />} />
           </Route>
+          <Route path="/ui" element={<UiPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<RegisterPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
+        </BrowserRouter>
+  </ToDoListContextProvider>
+  //
+
   );
 };
 

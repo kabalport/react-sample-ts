@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import UserHeader from "../layouts/UserHeader";
+import UserHeader from "../components/UserHeader";
 
 const UserLayout = () => {
   return (
